@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <title>SOUL School — </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div>
+          <strong>SOUL School</strong>
+          <span>School OS</span>
+        </div>
+      </div>
+
+      <div class="school-switch">
+        <div class="school-avatar">S</div>
+        <div class="school-name">
+          <b>SOUL Academy</b>
+          <small>2026–27 Session</small>
+        </div>
+        <button class="icon-btn tiny" aria-label="School options">⌄</button>
+      </div>
+
+      <nav class="nav">
+        <p class="nav-label">MAIN</p>
+        <button class="nav-item active" data-page="dashboard"><span>⌂</span>Dashboard</button>
+        <button class="nav-item" data-page="students"><span>♙</span>Students</button>
+        <button class="nav-item" data-page="teachers"><span>◉</span>Teachers & Staff</button>
+        <button class="nav-item" data-page="academics"><span>▦</span>Academics</button>
+        <button class="nav-item" data-page="attendance"><span>✓</span>Attendance</button>
+        <button class="nav-item" data-page="exams"><span>★</span>Exams & Grades</button>
+
+        <p class="nav-label">OPERATIONS</p>
+        <button class="nav-item" data-page="finance"><span>₨</span>Finance</button>
+        <button class="nav-item" data-page="inventory"><span>▣</span>Inventory</button>
+        <button class="nav-item" data-page="library"><span>▤</span>Library</button>
+        <button class="nav-item" data-page="communication"><span>✉</span>Communication</button>
+        <button class="nav-item" data-page="events"><span>◷</span>Events</button>
+        <button class="nav-item" data-page="documents"><span>□</span>Documents</button>
+
+        <p class="nav-label">INSIGHTS</p>
+        <button class="nav-item" data-page="reports"><span>◫</span>Reports</button>
+        <button class="nav-item" data-page="settings"><span>⚙</span>Settings</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="storage">
+          <div class="storage-head"><span>Storage</span><b>6.8%</b></div>
+          <div class="progress"><i style="width:6.8%"></i></div>
+          <small>6.8 GB of 100 GB used</small>
+        </div>
+        <div class="user-card">
+          <div class="avatar">SOUL</div>
+          <div><b>Admin User</b><small>School Admin</small></div>
+          <button class="icon-btn tiny" id="logoutBtn">↪</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu icon-btn" id="mobileMenu">☰</button>
+        <div class="crumb"><span>SOUL school</span><b>/</b><strong id="pageTitle">Dashboard</strong></div>
+        <div class="top-actions">
+          <label class="global-search">
+            <span>⌕</span>
+            <input id="globalSearch" placeholder="Search students, staff, fees..." autocomplete="off">
+            <kbd>Ctrl K</kbd>
+          </label>
+          <button class="icon-btn theme-toggle" id="themeToggle" title="Toggle theme">☾</button>
+          <button class="icon-btn notification-btn" id="notificationBtn" title="Notifications">♢<i></i></button>
+          <div class="profile-menu">
+            <button class="profile-button" id="profileBtn"><div class="avatar sm">SOUL</div><span>SOUL Admin</span>⌄</button>
+            <div class="dropdown" id="profileDropdown">
+              <button data-page="settings">⚙ Profile & Settings</button>
+              <button id="quickLock">▣ Lock screen</button>
+              <button id="logoutDrop">↪ Sign out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content">
+        <div id="app"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="drawer notifications" id="notificationDrawer">
+    <div class="drawer-head"><div><b>Notifications</b><small>3 unread</small></div><button class="icon-btn" id="closeNotifications">×</button></div>
+    <div class="notification-list">
+      <div class="notice unread"><span class="notice-icon blue">₨</span><div><b>Fee payment received</b><p>Grade 9 — Rs. 45,000 received.</p><small>8 min ago</small></div></div>
+      <div class="notice unread"><span class="notice-icon purple">!</span><div><b>Low inventory alert</b><p>Printer paper is below reorder level.</p><small>42 min ago</small></div></div>
+      <div class="notice unread"><span class="notice-icon green">✓</span><div><b>Attendance submitted</b><p>Grade 8-A attendance is complete.</p><small>1 hr ago</small></div></div>
+      <div class="notice"><span class="notice-icon orange">★</span><div><b>Exam schedule published</b><p>Midterm exams are now visible.</p><small>Yesterday</small></div></div>
+    </div>
+    <button class="drawer-footer" id="markRead">Mark all as read</button>
+  </div>
+
+  <div class="modal-wrap" id="modalWrap">
+    <div class="modal" id="modal">
+      <div class="modal-head"><div><h3 id="modalTitle">Add Student</h3><p id="modalSubtitle">Create a new record.</p></div><button class="icon-btn" id="closeModal">×</button></div>
+      <form id="modalForm"></form>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack"></div>
+  <script src="script.js"></script>
+</body>
+</html>
